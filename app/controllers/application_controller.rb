@@ -2,6 +2,7 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
   # code actions here!
@@ -36,7 +37,7 @@ class ApplicationController < Sinatra::Base
 
   patch "/recipes/:id" do
     @recipe = Recipe.find(params[:id])
-    # params.delete("_method")
+    params.delete("_method")
     @recipe.update(params[:recipe])
     redirect to "/recipes/#{ @recipe.id }"
   end
