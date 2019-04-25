@@ -6,7 +6,7 @@ class ApplicationController < Sinatra::Base
   end
 
   # code actions here!
-
+  
   get "/" do
     redirect to "/recipes"
   end
@@ -25,6 +25,27 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+<<<<<<< HEAD
+  get "/" do
+    redirect to "/recipes"
+  end
+
+  get "/recipes" do
+    @recipes = Recipe.all
+    erb :index
+  end
+
+  get "/recipes/new" do
+    erb :new
+  end
+
+  get "/recipes/:id" do
+    @recipe = Recipe.find(params[:id])
+    erb :show
+  end
+
+=======
+>>>>>>> 530732f17f4ebca42162af97ad802912e5c93cce
   post '/recipes' do
     @recipe = Recipe.create(params[:recipe])
     redirect to "/recipes/#{ @recipe.id }"
@@ -37,7 +58,11 @@ class ApplicationController < Sinatra::Base
 
   patch "/recipes/:id" do
     @recipe = Recipe.find(params[:id])
+<<<<<<< HEAD
     params.delete("_method")
+=======
+    # params.delete("_method")
+>>>>>>> 530732f17f4ebca42162af97ad802912e5c93cce
     @recipe.update(params[:recipe])
     redirect to "/recipes/#{ @recipe.id }"
   end
@@ -46,5 +71,9 @@ class ApplicationController < Sinatra::Base
     Recipe.destroy(params[:id])
     redirect to "/recipes"
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 530732f17f4ebca42162af97ad802912e5c93cce
 end

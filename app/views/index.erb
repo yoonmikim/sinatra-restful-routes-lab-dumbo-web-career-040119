@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <ul>
 <% @recipes.each do |recipe|%>
   <li>
@@ -7,3 +8,27 @@
   </li>
 <% end %>
 </ul>
+=======
+I AM A LIST THANKS
+
+<form action="/recipes">
+  
+  <input type="text" name="q" />
+  <input type="submit" />
+
+</form>
+
+<a href="/recipes/new">Make a new recipe</a>
+
+<ol>
+  <% @recipes.each do |recipe| %>
+    <li>
+      <a href="/recipes/<%= recipe.id %>">
+        <%= recipe.name %>
+        <%= recipe.ingredients %>
+        <%= recipe.cook_time %>
+      </a>
+    </li>
+  <% end %>
+</ol>
+>>>>>>> 530732f17f4ebca42162af97ad802912e5c93cce

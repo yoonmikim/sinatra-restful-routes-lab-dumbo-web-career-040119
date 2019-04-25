@@ -1,6 +1,7 @@
 <input type="hidden" name="_method" value="PATCH" />
   <ul>
     <li>
+<<<<<<< HEAD
       <label for="recipe-name">Name:</label>
       <input id="recipe-name" type="text" name="recipe[name]" value="<%= @recipe.name %>" />
     </li>
@@ -14,3 +15,18 @@
     </li>
   </ul>
   <input type="submit" value="Submit" />
+=======
+      <label for="recipe-name">Make:</label>
+      <input id="recipe-name" type="text" name="recipe[name]" value="<%= @recipe.name %>" />
+    </li>
+    <li>
+      <label for="recipe-ingredients">Model:</label>
+      <input id="recipe-ingredients" type="text" name="recipe[ingredients]" value="<%= @recipe.ingredients %>" />
+    </li>
+    <li>
+      <label for="recipe-cook_time">Year:</label>
+      <input id="recipe-cook_time" type="number" name="recipe[cook_time]" value="<%= @recipe[cook_time] %>" />
+    </li>
+  </ul>
+  <input type="submit" value="Submit" />
+>>>>>>> 530732f17f4ebca42162af97ad802912e5c93cce
